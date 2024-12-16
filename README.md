@@ -1,7 +1,7 @@
 # **BizDev.kz** 🚀  
 ### *AI-Powered Solution for Organizational Change Management*  
 
-Welcome to **BizDev.kz**, an AI-powered project developed under the **Qaldy AI** initiative. This platform focuses on improving **organizational change management** for government agencies in Kazakhstan through intelligent tools and streamlined workflows.
+Welcome to **BizDev.kz**, an AI-powered project developed under the **Qaldy AI** initiative. This platform focuses on improving **organizational change management** for organizations businesses in Kazakhstan through intelligent tools and streamlined workflows.
 
 ---
 
