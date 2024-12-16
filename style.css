@@ -1,0 +1,544 @@
+/* style.css */
+
+/* Цветовая палитра */
+/* Основные цвета */
+:root {
+  --deep-blue: #002D72; /* Темно-синий */
+  --slate-gray: #708090; /* Серый */
+  --white: #FFFFFF; /* Белый */
+  --teal: #20B2AA; /* Акцентный зелёный */
+  --coral: #FF7F50; /* Акцентный оранжевый */
+  --light-gray: #F5F5F5; /* Светло-серый */
+  --black: #000000; /* Чёрный */
+  --pastel-blue: #B0E0E6; /* Пастельный голубой */
+}
+
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--light-gray);
+  color: var(--slate-gray); /* Основной цвет текста */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow-x: hidden; /* Убираем горизонтальный скроллинг */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Навигационная строка */
+.navbar {
+  width: 100%;
+  background-color: var(--deep-blue);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.navbar-logo {
+  width: 120px;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-menu li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover,
+.navbar-menu li a:focus {
+  color: var(--coral);
+}
+
+/* Стили для переключателя языка */
+.language-switcher {
+  display: flex;
+  gap: 8px;
+  margin-right: 20px; /* Отступ справа для отделения от кнопки "Contact" */
+}
+
+.lang-button {
+  padding: 6px 12px;
+  background-color: var(--deep-blue);
+  color: var(--white);
+  border: 1px solid var(--coral);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.lang-button img.flag-icon {
+  width: 20px;
+  height: 14px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.lang-button:hover {
+  background-color: var(--coral);
+  color: var(--deep-blue);
+  transform: translateY(-2px);
+}
+
+.lang-button:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.lang-button.active {
+  background-color: var(--teal);
+  color: var(--white);
+  border-color: var(--teal);
+}
+
+/* Contact Us Button */
+.contact-button {
+  padding: 8px 16px; /* Уменьшенные размеры кнопки */
+  background: linear-gradient(45deg, var(--coral), var(--teal));
+  color: var(--white);
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button:hover {
+  background: linear-gradient(45deg, var(--deep-blue), var(--coral));
+  transform: translateY(-2px);
+}
+
+.contact-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Мобильное меню */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: var(--white);
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+      position: absolute;
+      top: 55px;
+      left: -100%;
+      flex-direction: column;
+      background-color: var(--deep-blue);
+      width: 60%; /* Ширина меню — 60% */
+      height: auto;
+      transition: left 0.3s ease;
+  }
+
+  .navbar-menu.active {
+      left: 0; /* Полностью открываем меню */
+  }
+
+  .navbar-toggle {
+      display: flex;
+  }
+
+  .language-switcher {
+      margin-right: 10px;
+  }
+
+  .contact-button {
+      padding: 6px 12px; /* Ещё меньше для мобильных устройств */
+      font-size: 0.9em;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Высота на весь экран */
+  width: 100%; /* Ширина на весь экран */
+  background-image: url('images/backgroundbrain.jpeg'); /* Ваше изображение */
+  background-size: cover; /* Обрезка изображения для заполнения экрана */
+  background-position: center; /* Центровка изображения */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Фон фиксирован */
+  color: var(--white);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 45, 114, 0.6); /* Темно-синий полупрозрачный фон */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero-logo {
+  max-width: 80%; /* Обеспечивает отзывчивость логотипа */
+  height: auto; /* Сохраняет пропорции */
+  margin-bottom: 10px; /* Дополнительный отступ под логотипом */
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5em; /* Размер для ПК */
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.hero-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8em; /* Подзаголовок */
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: var(--teal);
+}
+
+.hero-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: var(--white);
+}
+
+.hero-button {
+  padding: 14px 28px;
+  background: linear-gradient(45deg, var(--coral), var(--teal));
+  color: var(--white);
+  font-weight: 700;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+}
+
+.hero-button:hover {
+  background: linear-gradient(45deg, var(--deep-blue), var(--coral));
+  transform: translateY(-2px);
+}
+/* Основные секции */
+main {
+  margin-top: 0; /* Убираем верхний отступ */
+  padding-top: 60px; /* Учитываем фиксированную высоту навигационной строки */
+  width: 100%;
+  max-width: 800px; /* Сделано более узким */
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.stage {
+  background-color: var(--white); /* Секции остаются белыми для читаемости */
+  color: var(--deep-blue); /* Обеспечиваем темно-синий цвет текста */
+  padding: 40px 20px;
+  margin: 20px auto; /* Добавляем больше разделения между секциями */
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовки */
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--deep-blue);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+/* Серая рамка с текстом */
+.description {
+  font-size: 0.85em; /* Уменьшенный размер текста */
+  line-height: 1.4; /* Уменьшенная высота строки */
+  color: var(--deep-blue); /* Цвет текста */
+  margin-bottom: 20px;
+  padding: 10px; /* Меньше внутреннего отступа */
+  border: 1px solid rgba(0, 45, 114, 0.1); /* Более тонкая рамка */
+  border-radius: 8px;
+  background-color: rgba(0, 45, 114, 0.03); /* Едва заметный фон */
+  text-align: left;
+}
+
+/* Для мобильных устройств (ширина экрана <= 600px) */
+@media (max-width: 600px) {
+  .description {
+      font-size: 0.9em; /* Исправлено: слишком маленький размер был нечитабельным */
+      line-height: 1.3; /* Уменьшенная высота строки */
+      padding: 8px; /* Меньше отступов внутри */
+      margin-bottom: 15px; /* Уменьшенный отступ снизу */
+  }
+
+  .hero h1 {
+      font-size: 2em;
+  }
+
+  .hero-subtitle {
+      font-size: 1.2em;
+  }
+
+  .hero p {
+      font-size: 1em;
+  }
+
+  /* Дополнительные стили для кнопок копирования и AI Copy внутри prompt-box */
+  .prompt-box .copy-button,
+  .prompt-box .ai-copy-button {
+      width: 100%;
+      text-align: center;
+  }
+}
+
+/* Поля ввода и текстовые области */
+.prompt-box {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.prompt-box label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--deep-blue);
+}
+
+.prompt-box input[type="text"],
+.prompt-box textarea {
+  width: 100%;
+  padding: 12px;
+  color: var(--deep-blue);
+  background-color: var(--light-gray);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1em;
+  font-weight: 400;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-box textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 300px;
+  line-height: 1.5;
+}
+
+.prompt-box .copy-button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: var(--coral); /* Оранжевый цвет для копирования */
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.prompt-box .copy-button:hover {
+  background-color: #FF6347; /* Темнее кораллового при наведении */
+}
+
+/* Новая кнопка AI Copy */
+.prompt-box .ai-copy-button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: var(--teal); /* Зелёный цвет для AI Copy */
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.prompt-box .ai-copy-button:hover {
+  background-color: #1E90FF; /* Немного изменённый оттенок при наведении */
+}
+
+/* Кнопки */
+.stage-button {
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: linear-gradient(45deg, var(--teal), var(--deep-blue));
+  color: var(--white);
+  font-weight: 700;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1em;
+}
+
+.stage-button:hover {
+  background: linear-gradient(45deg, var(--coral), var(--deep-blue));
+  transform: translateY(-2px);
+}
+
+.stage-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.copy-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--coral); /* Оранжевый цвет для копирования */
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.copy-button:hover {
+  background-color: #FF6347; /* Темнее кораллового при наведении */
+}
+
+/* Вывод результатов */
+.output {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: var(--light-gray); /* Светло-серый фон для вывода */
+  color: var(--deep-blue);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-height: 100px;
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: left;
+  overflow-y: auto;
+}
+
+/* Футер */
+footer {
+  margin-top: 20px;
+  padding: 10px;
+  color: var(--white);
+  text-align: center;
+  font-size: 0.9em;
+  background-color: var(--deep-blue);
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #ccc;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+  h1, h2 {
+      font-size: 1.5em;
+  }
+
+  .stage-button,
+  .copy-button,
+  .ai-copy-button,
+  .hero-button {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .description {
+      padding: 10px;
+      font-size: 1em;
+  }
+
+  .hero h1 {
+      font-size: 2em;
+  }
+
+  .hero-subtitle {
+      font-size: 1.2em;
+  }
+
+  .hero p {
+      font-size: 1em;
+  }
+
+  /* Дополнительные стили для кнопок копирования и AI Copy внутри prompt-box */
+  .prompt-box .copy-button,
+  .prompt-box .ai-copy-button {
+      width: 100%;
+      text-align: center;
+  }
+}
