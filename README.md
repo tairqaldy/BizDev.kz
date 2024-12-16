@@ -4,6 +4,8 @@
 Welcome to **BizDev.kz**, an AI-powered project developed under the **Qaldy AI** initiative. This platform focuses on improving **organizational change management** for organizations businesses in Kazakhstan through intelligent tools and streamlined workflows.
 
 ---
+![image](https://github.com/user-attachments/assets/96c78890-6b17-4ec0-872c-c1f532a467b0)
+---
 
 ## 🔑 **Overview**
 
