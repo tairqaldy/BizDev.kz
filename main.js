@@ -6,7 +6,8 @@ import { maybeShowApiKeyBanner } from './gemini-api-banner';
 import './style.css';
 
 // Ваш API ключ (обязательно замените на реальный ключ)
-let API_KEY = 'AIzaSyAqV2NQAYL1cUYAa_uCwfUW8UYwbqu6ems'; 
+// Замените YOUR_API_KEY_HERE на ваш API Gemini.
+let API_KEY = 'YOUR_API_KEY_HERE'; 
 
 document.addEventListener('DOMContentLoaded', () => {
   const forms = [
