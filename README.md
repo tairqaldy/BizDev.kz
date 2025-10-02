@@ -100,7 +100,7 @@ This project is proprietary and was developed under the **Qaldy AI** initiative.
 
 For inquiries, access requests, or collaboration opportunities, feel free to reach out:  
 
-📧 **Email**: taircaldy.yt@gmail.com / tair.caldy@mail.ru  
+📧 **Email**: taircaldy.yt@gmail.com 
 🔗 **LinkedIn**: [Tair Kaldybayev](https://www.linkedin.com/in/tair-kaldybayev-922198312/)  
 
 ---
